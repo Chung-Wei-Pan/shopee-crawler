@@ -33,7 +33,7 @@ do {
         $shopeeProducts = new ShopeeProduct();
         if (!isset($totalCount)) { // 至少要執行一次才抓得到總筆數
             $productCollection->setTotalCount($response[ShopeeProduct::FIELD_TOTAL_COUNT]);
-            $totalCount = 120; //$productCollection->getTotalCount();
+            $totalCount = $productCollection->getTotalCount();
         }
         $shopeeProducts
             ->setPrice($item[ShopeeProduct::RESPONSE_KEY][ShopeeProduct::FIELD_PRICE])
